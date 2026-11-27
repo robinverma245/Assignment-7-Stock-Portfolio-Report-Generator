@@ -2,6 +2,7 @@
 
 from portfolio import read_portfolio, get_stock_price
 
+
 def test_read_portfolio(tmp_path):
     """Test reading stock holdings from a CSV file."""
     source = tmp_path / "portfolio.csv"
@@ -15,6 +16,8 @@ def test_read_portfolio(tmp_path):
     assert result == [
         {"symbol": "AAPL", "units": 10, "cost": 150.0}
     ]
+
+
 def test_get_stock_price(requests_mock):
     """Test retrieving a stock price using a mocked API."""
     requests_mock.get(
