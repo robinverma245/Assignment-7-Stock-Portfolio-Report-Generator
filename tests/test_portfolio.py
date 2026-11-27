@@ -1,6 +1,6 @@
 """Tests for portfolio operations."""
 
-from portfolio import read_portfolio, get_stock_price
+from portfolio import read_portfolio, get_stock_price, calculate_performance
 
 
 def test_read_portfolio(tmp_path):
@@ -32,7 +32,7 @@ def test_get_stock_price(requests_mock):
     assert get_stock_price("AAPL", "test_key") == 204.29
 def test_calculate_performance():
     """Test portfolio performance calculations."""
-    from portfolio import calculate_performance
+
 
     result = calculate_performance(10, 150, 200)
 
